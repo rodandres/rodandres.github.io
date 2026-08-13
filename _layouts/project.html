@@ -1,0 +1,103 @@
+---
+layout: default
+---
+
+<article class="project-page">
+
+    <header class="project-header">
+
+        <p class="section-label">
+            {{ page.category }}
+        </p>
+
+        <h1>
+            {{ page.title }}
+        </h1>
+
+        {% if page.description %}
+        <p class="project-description">
+            {{ page.description }}
+        </p>
+        {% endif %}
+
+        <div class="project-meta">
+
+            {% if page.year %}
+            <span>{{ page.year }}</span>
+            {% endif %}
+
+            {% if page.status %}
+            <span>{{ page.status }}</span>
+            {% endif %}
+
+        </div>
+
+    </header>
+
+
+    {% if page.image %}
+    <img
+        class="project-hero-image"
+        src="{{ page.image | relative_url }}"
+        alt="{{ page.title }}"
+    >
+    {% endif %}
+
+
+    <div class="project-layout">
+
+        <div class="project-content">
+
+            {{ content }}
+
+        </div>
+
+
+        <aside class="project-sidebar">
+
+            {% if page.technologies %}
+
+            <div class="sidebar-section">
+
+                <h3>
+                    Technologies
+                </h3>
+
+                <ul>
+
+                    {% for technology in page.technologies %}
+
+                    <li>
+                        {{ technology }}
+                    </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+
+            {% endif %}
+
+
+            {% if page.github %}
+
+            <div class="sidebar-section">
+
+                <h3>
+                    Repository
+                </h3>
+
+                <a href="{{ page.github }}">
+                    GitHub →
+                </a>
+
+            </div>
+
+            {% endif %}
+
+        </aside>
+
+    </div>
+
+</article>

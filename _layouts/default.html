@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="{{ site.description }}">
+
+    <title>{{ page.title }} | {{ site.title }}</title>
+
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a href="{{ '/' | relative_url }}" class="site-name">
+                Andrés Rodríguez
+            </a>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        {{ content }}
+
+    </main>
+
+<footer class="site-footer">
+
+    <div class="footer-links">
+
+        <a href="https://github.com/rodandres"
+        target="_blank"
+        rel="noopener"
+        class="footer-link">
+
+            <img src="{{ '/assets/images/github.png' | relative_url }}"
+                alt="GitHub">
+
+            <span>GitHub</span>
+
+        </a>
+
+
+        <a href="https://www.linkedin.com/in/andr%C3%A9s-felipe-rodr%C3%ADguez-acosta-8a2b761a7/"
+        target="_blank"
+        rel="noopener"
+        class="footer-link">
+
+            <img src="{{ '/assets/images/linkedin.png' | relative_url }}"
+                alt="LinkedIn">
+
+            <span>LinkedIn</span>
+
+        </a>
+
+
+        <a href="mailto:andres.rodriguez10@udea.edu.co"
+        class="footer-link">
+
+            <img src="{{ '/assets/images/email.png' | relative_url }}"
+                alt="Email">
+
+            <span>Email</span>
+
+        </a>
+
+    </div>
+
+    <p class="footer-quote">
+        Code · Rockets · Burgers · Repeat
+    </p>
+
+
+    <p class="footer-main">
+        Andrés Rodríguez
+        <span>—</span>
+        Aerospace Engineering Student
+        <span>—</span>
+        © {{ site.time | date: "%Y" }}
+    </p>
+
+</footer>
+
+</body>
+
+</html>
