@@ -1,0 +1,14 @@
+title: "Andrés Felipe Rodríguez Acosta"
+description: "Aerospace Engineering Student"
+url: "https://rodandres.github.io"
+
+markdown: kramdown
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
