@@ -29,6 +29,25 @@
                 <a href="#contact">Contact</a>
             </div>
 
+            {% if page.layout == "project" %}
+
+            <button
+                class="project-header-navigation"
+                type="button"
+                aria-expanded="false"
+                aria-controls="project-navigation-links"
+            >
+                <span>SECTIONS</span>
+                <span class="project-navigation-icon">+</span>
+            </button>
+
+            <div
+                id="project-navigation-links"
+                class="project-navigation-links"
+            ></div>
+
+            {% endif %}
+
         </nav>
 
     </header>
