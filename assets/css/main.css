@@ -230,17 +230,18 @@ main {
 
 .skills-grid {
     display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 30px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
 }
 
+.skills-grid > div {
+    min-width: 0;
+}
 
 .skills-grid h3 {
     margin-bottom: 10px;
 }
-
 
 .skills-grid p {
     color: var(--muted);
@@ -281,7 +282,7 @@ main {
 
 
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
 }
@@ -739,4 +740,473 @@ main {
     letter-spacing: 0.04em;
 
     opacity: 0.45;
+}
+
+.skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+.skills-grid > div {
+    width: auto !important;
+    min-width: 0 !important;
+}
+
+.about-link {
+    display: inline-block;
+    margin-top: 30px;
+
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+}
+
+.about-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   ABOUT HERO
+   ========================================================= */
+
+.about-hero {
+    min-height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 1000px;
+
+    padding: 120px 0 160px;
+}
+
+.about-hero h1 {
+    font-size: clamp(4rem, 10vw, 9rem);
+    line-height: 0.88;
+
+    letter-spacing: -0.05em;
+
+    margin: 25px 0 40px;
+}
+
+.about-intro {
+    max-width: 650px;
+
+    font-size: 1.35rem;
+    line-height: 1.5;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.story {
+    position: relative;
+
+    padding: 100px 0 200px;
+}
+
+
+/* =========================================================
+   VERTICAL LINE
+   ========================================================= */
+
+.story-line {
+    position: absolute;
+
+    left: 8%;
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background: var(--border);
+}
+
+.story-line-progress {
+    position: sticky;
+
+    top: 20vh;
+
+    width: 1px;
+    height: 20vh;
+
+    background: var(--text);
+}
+
+
+/* =========================================================
+   STORY SCENE
+   ========================================================= */
+
+.story-scene {
+    position: relative;
+
+    min-height: 90vh;
+
+    display: grid;
+    grid-template-columns: 45% 55%;
+
+    align-items: center;
+
+    padding: 120px 5% 120px 14%;
+
+    gap: 60px;
+}
+
+
+/* =========================================================
+   MARKER
+   ========================================================= */
+
+.story-marker {
+    position: absolute;
+
+    left: calc(8% - 8px);
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.story-dot {
+    width: 15px;
+    height: 15px;
+
+    border: 2px solid var(--text);
+
+    background: var(--background);
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+.story-number {
+    position: absolute;
+
+    right: 30px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   STORY CONTENT
+   ========================================================= */
+
+.story-content {
+    max-width: 600px;
+}
+
+.story-label {
+    margin: 0 0 20px;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    color: var(--muted);
+}
+
+.story-content h2 {
+    margin: 0 0 30px;
+
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.035em;
+}
+
+.story-text {
+    margin: 0 0 25px;
+
+    font-size: 1.3rem;
+
+    line-height: 1.45;
+
+    color: var(--text);
+}
+
+.story-description {
+    max-width: 560px;
+
+    margin: 0 0 20px;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.story-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 35px;
+}
+
+.story-tags span {
+    border: 1px solid var(--border);
+
+    padding: 7px 10px;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.story-media {
+    width: 100%;
+
+    height: 65vh;
+
+    overflow: hidden;
+}
+
+.story-media img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 1.2s ease;
+}
+
+.story-scene:hover .story-media img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   CER-0 RESULT
+   ========================================================= */
+
+.story-result {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 45px;
+}
+
+.story-result div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.result-label {
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    color: var(--muted);
+
+    margin-bottom: 5px;
+}
+
+.story-result strong {
+    font-size: 2rem;
+
+    line-height: 1;
+}
+
+.result-arrow {
+    font-size: 1.5rem;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   FINAL SCENE
+   ========================================================= */
+
+.story-scene-final {
+    padding-bottom: 180px;
+}
+
+
+/* =========================================================
+   ENDING
+   ========================================================= */
+
+.about-ending {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    border-top: 1px solid var(--border);
+
+    padding: 100px 20px;
+}
+
+.about-ending h2 {
+    max-width: 900px;
+
+    margin: 20px 0 0;
+
+    font-size: clamp(3rem, 7vw, 7rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-hero {
+        min-height: 70vh;
+
+        padding: 100px 0;
+    }
+
+    .story-line {
+        left: 5%;
+    }
+
+    .story-scene {
+        grid-template-columns: 1fr;
+
+        padding: 100px 5% 100px 12%;
+
+        gap: 50px;
+    }
+
+    .story-marker {
+        left: calc(5% - 7px);
+    }
+
+    .story-number {
+        display: none;
+    }
+
+    .story-media {
+        height: 55vh;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .about-hero {
+        padding: 80px 0;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(3.5rem, 17vw, 6rem);
+    }
+
+    .about-intro {
+        font-size: 1.1rem;
+    }
+
+    .story {
+        padding-top: 40px;
+    }
+
+    .story-scene {
+        min-height: auto;
+
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        padding-left: 15%;
+    }
+
+    .story-content h2 {
+        font-size: 2.7rem;
+    }
+
+    .story-text {
+        font-size: 1.15rem;
+    }
+
+    .story-media {
+        height: 45vh;
+    }
+
+    .story-result {
+        gap: 18px;
+    }
+
+    .story-result strong {
+        font-size: 1.6rem;
+    }
+
+    .about-ending {
+        min-height: 60vh;
+    }
+}
+
+.about-ending-note {
+    margin-top: 35px;
+
+    font-size: 0.9rem;
+    color: var(--muted);
+
+    font-style: italic;
 }
