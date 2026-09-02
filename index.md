@@ -6,7 +6,7 @@ title: Home
 <section class="hero">
 
     <p class="eyebrow">
-        SPACE · ASTRODYNAMICS · GNC · SYSTEMS ENGINEERING
+        AUTONOMOUS SYSTEMS · GNC · AEROSPACE · SYSTEMS ENGINEERING
     </p>
 
     <h1>
@@ -15,8 +15,7 @@ title: Home
     </h1>
 
     <p class="hero-description">
-            Aerospace engineering student focused on space systems,
-            astrodynamics, GNC, and systems engineering.
+           Final year aerospace engineering student interested in autonomous systems, GNC, and intelligent decision-making under uncertainty.
     </p>
 
     <p class="hero-note">
@@ -60,27 +59,40 @@ title: Home
         </p>
 
         <h2>
-            Space systems, from theory to implementation.
+            Building systems that can think, adapt, and act.
         </h2>
 
         <p>
-            I am an undergraduate aerospace engineering student working at the
-            intersection of astrodynamics, GNC, and systems engineering. My work focuses on
-            modeling, simulation, analysis, and the development of autonomous
-            integrated aerospace systems.
+            I am a final year aerospace engineering student interested in autonomous systems
+            that can take decisions, and operate even when things do not go as expected.
+            My work brings together modeling, simulation, software,
+            electronics, control, and systems engineering to turn these ideas into
+            working systems.
         </p>
 
         <p>
-            For me, it’s simply the perfect way to combine theory with hands-on work to create cutting-edge engineering. But in reality, it’s having fun with friends, meeting new people, and having unique experiences that make it special.
+            Much of this mindset has been shaped by experimental rocketry. As
+            Technology Manager at Volta, I have led avionics, software, and autonomy
+            efforts while working with a team to turn ambitious ideas into real
+            flight systems. It has taught me that engineering is rarely about solving
+            a problem alone, it is about building systems, and building the people
+            who build them.
+        </p>
 
+        <p>
+            Engineering is, for me, as much about the process as it is about the result. I enjoy turning ideas into things that actually work, learning from the people I meet along the way, and saying yes to projects that seem a little too difficult, too ambitious, or simply too crazy at first.
         </p>
 
         <blockquote class="about-quote">
 
         When I'm not coding, I'm designing a rocket.
-        And when I'm not doing either, I'm probably eating a hamburger.
+        And when I'm not doing either, I'm probably eating a burger.
 
         </blockquote>
+
+        <a href="{{ '/about/' | relative_url }}" class="about-link">
+            THE STORY SO FAR →
+        </a>
 
     </div>
 
@@ -189,15 +201,28 @@ title: Home
 
         <div>
             <h3>
-                Aerospace
+                Autonomy & GNC
             </h3>
 
             <p>
-                Classic & Cislunar Astrodynamics<br>
+                State Estimation<br>
+                Sensor Fusion<br>
                 Attitude Determination & Control<br>
-                Spacecraft Dynamics<br>
-                Propulsion<br>
+                Control Theory<br>
+                Guidance<br>                
                 GNC
+            </p>
+        </div>
+
+        <div>
+            <h3>
+                Aerospace
+            </h3>
+            <p>                
+                Keplerian & Cislunar Astrodynamics<br>
+                Atmospheric Flight Dynamics<br>
+                Aerodynamics<br>
+                Propulsion<br>
             </p>
         </div>
 
@@ -210,7 +235,7 @@ title: Home
             <p>
                 Python<br>
                 C / C++<br>
-                Git<br>
+                Git/GitHub<br>
                 Linux<br>
                 Numerical Simulation
             </p>
@@ -223,9 +248,7 @@ title: Home
             </h3>
 
             <p>
-                Embedded Systems<br>
-                ESP32<br>
-                Sensors<br>
+                Embedded Systems<br>                                
                 PCB Development<br>
                 Live Telemetry & Communications
             </p>
@@ -239,6 +262,7 @@ title: Home
 
             <p>
                 GMAT<br>
+                Capella / Arcadia<br>
                 MATLAB<br>
                 QT<br>                
                 CAD
@@ -261,7 +285,7 @@ title: Home
     </h2>
 
     <p>
-        For research, engineering projects, or collaboration.
+        For research, engineering projects, collaboration or simply to share good music.
     </p>
 
     <div class="contact-links">
