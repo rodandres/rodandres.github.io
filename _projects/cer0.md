@@ -33,12 +33,33 @@ technologies:
 
 github: "https://github.com/rodandres"
 
+demo: "https://example.com"
+
+paper: "https://example.com/paper"
+
+video: "https://example.com/vieo"
+
 available: true
+
+collections:  
+  - technical
+
+carousel:  
+  technical: 3
+
+
 ---
 
-## **01 / THE PROBLEM**
+## **THE PROBLEM**
 
 ### Building a rocket that had to work
+
+Research spanning three complementary lines. Independently developing the ARGOS Toolkit, a modular Python GNC simulation framework with pluggable guidance/navigation/control/allocation laws, multi-spacecraft relative-motion (REL2BP) and three-body (CR3BP) propagators, a custom adaptive-step RK45 integrator, and differential correction/continuation for periodic orbit families (Lyapunov–Halo bifurcation detection, NRHO resonance targeting). Faculty-supervised: (1) applying Arcadia/Capella MBSE methodology to define the operational and logical architecture of a cislunar RPOD GNC system in an NRHO/L2 environment; (2) proposing a fault-aware extension of passively-safe convex guidance for cislunar NRHO/L2 operations, coupling a lightweight onboard anomaly detector to guaranteed-feasible abort/safe-hold re-solve, with an abstract in preparation for the AAS/AIAA Space Flight Mechanics Meeting 2027.
+
+$$
+a = \frac{T - mg - D}{m}
+$$
+
 
 CER-0 was the first major rocket I helped design and build at Volta
 Rocketry.
@@ -161,7 +182,19 @@ The flight computer was responsible for collecting sensor data,
 processing measurements, determining the current flight condition,
 and executing the appropriate mission logic.
 
-[Flight computer architecture diagram]
+<figure class="project-image project-image-small">
+
+    <img
+        src="{{ '/assets/images/placeholder.png' | relative_url }}"
+        alt="CER-0 flight computer">
+
+    <figcaption>
+        Flight computer developed for CER-0.
+    </figcaption>
+
+</figure>
+
+
 
 The important part was not simply reading sensors or activating an
 output.

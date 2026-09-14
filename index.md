@@ -71,12 +71,14 @@ title: Home
         </p>
 
         <p>
-            Much of this mindset has been shaped by experimental rocketry. As
-            Technology Manager at Volta, I have led avionics, software, and autonomy
-            efforts while working with a team to turn ambitious ideas into real
-            flight systems. It has taught me that engineering is rarely about solving
-            a problem alone, it is about building systems, and building the people
-            who build them.
+            Much of this mindset has been shaped by a long habit of building things:
+            from my early beginnings with robotics and software development to,
+            more recently, experimental rocketry. That path eventually led me to
+            Volta, where, as Technology Manager, I have brought those experiences
+            together to lead avionics, software, and autonomy efforts, while working
+            with a team to turn ambitious ideas into real flight systems. It has
+            taught me that engineering is rarely about solving a problem alone;
+            it is about building systems, and building the people who build them.
         </p>
 
         <p>
@@ -127,7 +129,7 @@ title: Home
 </section>
 
 
-<section class="section" id="projects">
+<section class="section projects-section" id="projects">
 
     <p class="section-label">
         SELECTED WORK
@@ -137,52 +139,148 @@ title: Home
         Projects
     </h2>
 
-    <div class="projects-grid">
 
-        {% for project in site.projects %}
+    <div class="project-carousel">
 
-        <article class="project-card">
+        <!-- CATEGORY HEADER -->
 
-            <p class="project-type">
-                {{ project.category }}
+        <div class="project-carousel-header">
+
+            <p class="project-carousel-label">
+                FEATURED
             </p>
 
-            <h3>
-                {{ project.title }}
-            </h3>
-
-            {% if project.description %}
-            <p>
-                {{ project.description }}
+            <p class="project-carousel-description">
+                Selected work that best represents my current focus and profile.
             </p>
-            {% endif %}
 
-            
-            {% if project.status %}
-            <p class="project-status">
-                {{ project.status }}
-            </p>
-            {% endif %}
+        </div>
 
-            {% if project.available %}
 
-                <a href="{{ project.url | relative_url }}">
-                    View project →
-                </a>
+        <!-- CAROUSEL CONTROLS -->
 
-            {% else %}
+        <div class="project-carousel-controls">
 
-                <span class="project-soon">
-                    Coming soon
-                </span>
+            <button
+                class="project-carousel-button"
+                id="projects-prev"
+                aria-label="Previous project category">
+                ←
+            </button>
 
-            {% endif %}
+            <button
+                class="project-carousel-button"
+                id="projects-next"
+                aria-label="Next project category">
+                →
+            </button>
 
-        </article>
+        </div>
 
-        {% endfor %}
+
+        <!-- PROJECTS -->
+
+        <div
+            class="projects-grid"
+            id="projects-grid">
+
+            {% for project in site.projects %}
+
+                {% if project.collections contains "featured"
+                or project.collections contains "recent"
+                or project.collections contains "technical" %}
+
+                <article
+                    class="project-card"
+                    data-project-categories="{{ project.collections | join: ' ' }}"
+                    data-featured-order="{{ project.carousel.featured | default: 999 }}"
+                    data-recent-order="{{ project.carousel.recent | default: 999 }}"
+                    data-technical-order="{{ project.carousel.technical | default: 999 }}">
+
+                    <p class="project-type">
+                        {{ project.category }}
+                    </p>
+
+                    <h3>
+                        {{ project.title }}
+                    </h3>
+
+                    {% if project.description %}
+                    <p>
+                        {{ project.description }}
+                    </p>
+                    {% endif %}
+
+                    {% if project.status %}
+                    <p class="project-status">
+                        {{ project.status }}
+                    </p>
+                    {% endif %}
+
+                    {% if project.available %}
+
+                        <a href="{{ project.url | relative_url }}">
+                            View project →
+                        </a>
+
+                    {% else %}
+
+                        <span class="project-soon">
+                            Coming soon
+                        </span>
+
+                    {% endif %}
+
+                </article>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- CATEGORY INDICATOR -->
+
+        <div class="project-carousel-indicator">
+
+            <button
+                class="project-indicator active"
+                data-category="featured"
+                aria-label="Featured projects">
+            </button>
+
+            <button
+                class="project-indicator"
+                data-category="recent"
+                aria-label="Recent projects">
+            </button>
+
+            <button
+                class="project-indicator"
+                data-category="technical"
+                aria-label="Technical depth projects">
+            </button>
+
+        </div>
 
     </div>
+
+
+    <!-- FOOTER -->
+
+<div class="projects-footer">
+
+    <p>
+        Explore the full body of work, from ongoing research
+        to hands-on engineering projects.
+    </p>
+
+    <a href="{{ '/projects/' | relative_url }}" class="about-link">
+        VIEW ALL PROJECTS →
+    </a>
+
+</div>
 
 </section>
 

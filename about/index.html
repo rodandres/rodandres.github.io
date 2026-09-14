@@ -103,12 +103,57 @@ title: About
 
             </div>
 
-            <div class="story-media">
+            <div class="story-media carousel">
 
-                <img
-                    src="{{ '/assets/images/placeholder.png' | relative_url }}"
-                    alt="Early robotics project"
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img
+                            src="{{ '/assets/images/about/the_story_so_far/the_beginning/frontal_view_ev3.jpg' | relative_url }}"
+                            alt="EV3 robot for and sumo competitions"
+                        >
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <img
+                            src="{{ '/assets/images/about/the_story_so_far/the_beginning/code_ev3.jpg' | relative_url }}"
+                            alt="EV3 robot programming code"
+                        >
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img
+                            src="{{ '/assets/images/about/the_story_so_far/the_beginning/lateral_view_vex.jpg' | relative_url }}"
+                            alt="VEX robot lateral view"
+                        >
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img
+                            src="{{ '/assets/images/about/the_story_so_far/the_beginning/tover_arduino.jpg' | relative_url }}"
+                            alt="Arduino-based rover"
+                        >
+                    </div>
+
+
+                </div>
+
+                <button
+                    class="carousel-button carousel-prev"
+                    type="button"
+                    aria-label="Previous image"
                 >
+                    ←
+                </button>
+
+                <button
+                    class="carousel-button carousel-next"
+                    type="button"
+                    aria-label="Next image"
+                >
+                    →
+                </button>
+
+                <div class="carousel-dots"></div>
 
             </div>
 
@@ -178,8 +223,8 @@ title: About
             <div class="story-media">
 
                 <img
-                    src="{{ '/assets/images/placeholder.png' | relative_url }}"
-                    alt="Software development projects"
+                    src="{{ '/assets/images/about/another_wat_to_build/auxiapp_stand.jpg' | relative_url }}"
+                    alt="AuxiApp educational application"
                 >
 
             </div>
@@ -235,14 +280,51 @@ title: About
                 </p>
             </div>
 
-            <div class="story-media">
+<div class="story-media carousel">
 
-                <img
-                    src="{{ '/assets/images/placeholder.png' | relative_url }}"
-                    alt="Educational software project"
+    <div class="carousel-track">
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/engineering_with_a_purpose/learn_it_logo1.jpg' | relative_url }}"
+                alt="Learn It educational application logo first idea"
+            >
+        </div>
+
+        <div class="carousel-slide">
+            <video
+            muted
+            playsinline
+            autoplay
+            preload="auto"             
+            >
+                <source
+                    src="{{ '/assets/images/about/engineering_with_a_purpose/learn_it_web.mp4' | relative_url }}"
+                    type="video/mp4"
                 >
+            </video>
+        </div>
 
-            </div>
+    </div>
+
+    <button
+        class="carousel-button carousel-prev"
+        type="button"
+        aria-label="Previous image"
+    >
+        ←
+    </button>
+
+    <button
+        class="carousel-button carousel-next"
+        type="button"
+        aria-label="Next image"
+    >
+        →
+    </button>
+
+    <div class="carousel-dots"></div>
+                
 
         </article>
 
@@ -349,15 +431,73 @@ title: About
             </div>
 
 
-            <div class="story-media">
+<div class="story-media carousel">
 
-                <img
-                    src="{{ '/assets/images/placeholder.png' | relative_url }}"
-                    alt="CER-0 rocket"
+    <div class="carousel-track">
 
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/the_story_so_far/the_first_rocket/cronos_av.jpg' | relative_url }}"
+                alt="Cronos avionics bay"
+            >
+        </div>
+
+        <div class="carousel-slide">
+            <video
+            muted
+            playsinline
+            autoplay
+            preload="auto"             
+            >
+                <source
+                    src="{{ '/assets/images/about/the_story_so_far/the_first_rocket/cronos_launch_web.mp4' | relative_url }}"
+                    type="video/mp4"
                 >
+            </video>
+        </div>
 
-            </div>
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/the_story_so_far/the_first_rocket/cronos_recovery.jpg' | relative_url }}"
+                alt="Cronos rocket recovery"
+            >
+        </div>
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/the_story_so_far/the_first_rocket/cronos.jpg' | relative_url }}"
+                alt="Cronos experimental rocket"
+            >
+        </div>
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/the_story_so_far/the_first_rocket/cronos_rail.jpg' | relative_url }}"
+                alt="Cronos launch rail"
+            >
+        </div>
+
+    </div>
+
+    <button
+        class="carousel-button carousel-prev"
+        type="button"
+        aria-label="Previous image"
+    >
+        ←
+    </button>
+
+    <button
+        class="carousel-button carousel-next"
+        type="button"
+        aria-label="Next image"
+    >
+        →
+    </button>
+
+    <div class="carousel-dots"></div>
+
+</div>            
 
         </article>
 
@@ -439,14 +579,53 @@ title: About
 
             </div>
 
-            <div class="story-media">
 
-                <img
-                    src="{{ '/assets/images/placeholder.png' | relative_url }}"
-                    alt="Volta rocketry team"
-                >
+<div class="story-media carousel">
 
-            </div>
+    <div class="carousel-track">
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/from_systems_to_teams/volta_team_blur.jpg' | relative_url }}"
+                alt="Volta 2025 group photo"
+            >
+        </div>        
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/from_systems_to_teams/cattleya_grupal_blur.jpg' | relative_url }}"
+                alt="Volta 2026 group photo"
+            >
+        </div>
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/from_systems_to_teams/cattleya_flight_card.jpg' | relative_url }}"
+                alt="Cattleya flight card"
+            >
+        </div>
+
+    </div>
+
+    <button
+        class="carousel-button carousel-prev"
+        type="button"
+        aria-label="Previous image"
+    >
+        ←
+    </button>
+
+    <button
+        class="carousel-button carousel-next"
+        type="button"
+        aria-label="Next image"
+    >
+        →
+    </button>
+
+    <div class="carousel-dots"></div>
+
+</div>            
 
         </article>
 
@@ -515,14 +694,67 @@ title: About
 
             </div>
 
-            <div class="story-media">
 
-                <img
-                    src="{{ '/assets/images/placeholder.png' | relative_url }}"
-                    alt="Flight computer and avionics"
-                >
+<div class="story-media carousel">
 
-            </div>
+    <div class="carousel-track">
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/the_question_changed/marquub.jpeg' | relative_url }}"
+                alt="MarQuub PocketQube-class satellite"
+            >
+        </div>
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/the_question_changed/marquub_2.jpeg' | relative_url }}"
+                alt="MarQuub PocketQube-class satellite"
+            >
+        </div>        
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/the_question_changed/avionics_cesar.jpg' | relative_url }}"
+                alt="Avionics and flight computer for Cesar Rocket"
+            >
+        </div>
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/the_question_changed/cubesat_pcb.jpeg' | relative_url }}"
+                alt="Fireblast CubeSat-class satellite PCB"
+            >
+        </div>
+
+        <div class="carousel-slide">
+            <img
+                src="{{ '/assets/images/about/the_question_changed/cubesat.jpeg' | relative_url }}"
+                alt="Fireblast CubeSat-class satellite"
+            >
+        </div>
+
+    </div>
+
+    <button
+        class="carousel-button carousel-prev"
+        type="button"
+        aria-label="Previous image"
+    >
+        ←
+    </button>
+
+    <button
+        class="carousel-button carousel-next"
+        type="button"
+        aria-label="Next image"
+    >
+        →
+    </button>
+
+    <div class="carousel-dots"></div>
+
+</div>    
 
         </article>
 
@@ -578,7 +810,7 @@ title: About
             <div class="story-media">
 
                 <img
-                    src="{{ '/assets/images/placeholder.png' | relative_url }}"
+                    src="{{ 'assets/images/about/looking_beyond_earth/nrhos.png' | relative_url }}"
                     alt="Cislunar space and orbital dynamics"
                 >
 
