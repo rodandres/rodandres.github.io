@@ -226,7 +226,7 @@ title: Home
                     {% else %}
 
                         <span class="project-soon">
-                            Coming soon
+                            Link Coming soon
                         </span>
 
                     {% endif %}

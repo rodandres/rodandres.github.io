@@ -23,6 +23,6 @@ collections:
   - technical
 
 carousel:
-  featured: 1  
-  technical: 2
+  featured: 3 
+  technical: 3
 ---

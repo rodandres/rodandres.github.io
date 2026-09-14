@@ -1,9 +1,9 @@
 ---
 layout: project
 
-title: "Rendezvous, Proximity Operations and Docking in NRHO"
+title: "ARGOS - Framework for GNC simulations"
 
-category: "ASTRODYNAMICS · GNC · MBSE"
+category: "ASTRODYNAMICS · GNC · SIMULATION"
 
 year: 2026
 
@@ -28,13 +28,11 @@ paper: "https://example.com/paper"
 
 available: false
 
-collections:
-  - featured
+collections:  
   - recent
   - technical
 
-carousel:
-  featured: 1 
-  technical: 1
-  recent: 1
+carousel:   
+  technical: 2
+  recent: 2
 ---

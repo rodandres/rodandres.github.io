@@ -18,10 +18,4 @@ github: "https://github.com/rodandres"
 
 available: false
 
-collections:
-  - featured
-
-carousel:
-  featured: 2
-  
 ---
