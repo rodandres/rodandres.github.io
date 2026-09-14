@@ -6,7 +6,7 @@ title: Home
 <section class="hero">
 
     <p class="eyebrow">
-        SPACE · ASTRODYNAMICS · GNC · SYSTEMS ENGINEERING
+        AUTONOMOUS SYSTEMS · GNC · AEROSPACE · SYSTEMS ENGINEERING
     </p>
 
     <h1>
@@ -15,8 +15,7 @@ title: Home
     </h1>
 
     <p class="hero-description">
-            Aerospace engineering student focused on space systems,
-            astrodynamics, GNC, and systems engineering.
+           Final year aerospace engineering student interested in autonomous systems, GNC, and intelligent decision-making under uncertainty.
     </p>
 
     <p class="hero-note">
@@ -60,27 +59,42 @@ title: Home
         </p>
 
         <h2>
-            Space systems, from theory to implementation.
+            Building systems that can think, adapt, and act.
         </h2>
 
         <p>
-            I am an undergraduate aerospace engineering student working at the
-            intersection of astrodynamics, GNC, and systems engineering. My work focuses on
-            modeling, simulation, analysis, and the development of autonomous
-            integrated aerospace systems.
+            I am a final year aerospace engineering student interested in autonomous systems
+            that can take decisions, and operate even when things do not go as expected.
+            My work brings together modeling, simulation, software,
+            electronics, control, and systems engineering to turn these ideas into
+            working systems.
         </p>
 
         <p>
-            For me, it’s simply the perfect way to combine theory with hands-on work to create cutting-edge engineering. But in reality, it’s having fun with friends, meeting new people, and having unique experiences that make it special.
+            Much of this mindset has been shaped by a long habit of building things:
+            from my early beginnings with robotics and software development to,
+            more recently, experimental rocketry. That path eventually led me to
+            Volta, where, as Technology Manager, I have brought those experiences
+            together to lead avionics, software, and autonomy efforts, while working
+            with a team to turn ambitious ideas into real flight systems. It has
+            taught me that engineering is rarely about solving a problem alone;
+            it is about building systems, and building the people who build them.
+        </p>
 
+        <p>
+            Engineering is, for me, as much about the process as it is about the result. I enjoy turning ideas into things that actually work, learning from the people I meet along the way, and saying yes to projects that seem a little too difficult, too ambitious, or simply too crazy at first.
         </p>
 
         <blockquote class="about-quote">
 
         When I'm not coding, I'm designing a rocket.
-        And when I'm not doing either, I'm probably eating a hamburger.
+        And when I'm not doing either, I'm probably eating a burger.
 
         </blockquote>
+
+        <a href="{{ '/about/' | relative_url }}" class="about-link">
+            THE STORY SO FAR →
+        </a>
 
     </div>
 
@@ -115,7 +129,7 @@ title: Home
 </section>
 
 
-<section class="section" id="projects">
+<section class="section projects-section" id="projects">
 
     <p class="section-label">
         SELECTED WORK
@@ -125,52 +139,148 @@ title: Home
         Projects
     </h2>
 
-    <div class="projects-grid">
 
-        {% for project in site.projects %}
+    <div class="project-carousel">
 
-        <article class="project-card">
+        <!-- CATEGORY HEADER -->
 
-            <p class="project-type">
-                {{ project.category }}
+        <div class="project-carousel-header">
+
+            <p class="project-carousel-label">
+                FEATURED
             </p>
 
-            <h3>
-                {{ project.title }}
-            </h3>
-
-            {% if project.description %}
-            <p>
-                {{ project.description }}
+            <p class="project-carousel-description">
+                Selected work that best represents my current focus and profile.
             </p>
-            {% endif %}
 
-            
-            {% if project.status %}
-            <p class="project-status">
-                {{ project.status }}
-            </p>
-            {% endif %}
+        </div>
 
-            {% if project.available %}
 
-                <a href="{{ project.url | relative_url }}">
-                    View project →
-                </a>
+        <!-- CAROUSEL CONTROLS -->
 
-            {% else %}
+        <div class="project-carousel-controls">
 
-                <span class="project-soon">
-                    Coming soon
-                </span>
+            <button
+                class="project-carousel-button"
+                id="projects-prev"
+                aria-label="Previous project category">
+                ←
+            </button>
 
-            {% endif %}
+            <button
+                class="project-carousel-button"
+                id="projects-next"
+                aria-label="Next project category">
+                →
+            </button>
 
-        </article>
+        </div>
 
-        {% endfor %}
+
+        <!-- PROJECTS -->
+
+        <div
+            class="projects-grid"
+            id="projects-grid">
+
+            {% for project in site.projects %}
+
+                {% if project.collections contains "featured"
+                or project.collections contains "recent"
+                or project.collections contains "technical" %}
+
+                <article
+                    class="project-card"
+                    data-project-categories="{{ project.collections | join: ' ' }}"
+                    data-featured-order="{{ project.carousel.featured | default: 999 }}"
+                    data-recent-order="{{ project.carousel.recent | default: 999 }}"
+                    data-technical-order="{{ project.carousel.technical | default: 999 }}">
+
+                    <p class="project-type">
+                        {{ project.category }}
+                    </p>
+
+                    <h3>
+                        {{ project.title }}
+                    </h3>
+
+                    {% if project.description %}
+                    <p>
+                        {{ project.description }}
+                    </p>
+                    {% endif %}
+
+                    {% if project.status %}
+                    <p class="project-status">
+                        {{ project.status }}
+                    </p>
+                    {% endif %}
+
+                    {% if project.available %}
+
+                        <a href="{{ project.url | relative_url }}">
+                            View project →
+                        </a>
+
+                    {% else %}
+
+                        <span class="project-soon">
+                            Link Coming soon
+                        </span>
+
+                    {% endif %}
+
+                </article>
+
+                {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- CATEGORY INDICATOR -->
+
+        <div class="project-carousel-indicator">
+
+            <button
+                class="project-indicator active"
+                data-category="featured"
+                aria-label="Featured projects">
+            </button>
+
+            <button
+                class="project-indicator"
+                data-category="recent"
+                aria-label="Recent projects">
+            </button>
+
+            <button
+                class="project-indicator"
+                data-category="technical"
+                aria-label="Technical depth projects">
+            </button>
+
+        </div>
 
     </div>
+
+
+    <!-- FOOTER -->
+
+<div class="projects-footer">
+
+    <p>
+        Explore the full body of work, from ongoing research
+        to hands-on engineering projects.
+    </p>
+
+    <a href="{{ '/projects/' | relative_url }}" class="about-link">
+        VIEW ALL PROJECTS →
+    </a>
+
+</div>
 
 </section>
 
@@ -189,15 +299,28 @@ title: Home
 
         <div>
             <h3>
-                Aerospace
+                Autonomy & GNC
             </h3>
 
             <p>
-                Classic & Cislunar Astrodynamics<br>
+                State Estimation<br>
+                Sensor Fusion<br>
                 Attitude Determination & Control<br>
-                Spacecraft Dynamics<br>
-                Propulsion<br>
+                Control Theory<br>
+                Guidance<br>                
                 GNC
+            </p>
+        </div>
+
+        <div>
+            <h3>
+                Aerospace
+            </h3>
+            <p>                
+                Keplerian & Cislunar Astrodynamics<br>
+                Atmospheric Flight Dynamics<br>
+                Aerodynamics<br>
+                Propulsion<br>
             </p>
         </div>
 
@@ -210,7 +333,7 @@ title: Home
             <p>
                 Python<br>
                 C / C++<br>
-                Git<br>
+                Git/GitHub<br>
                 Linux<br>
                 Numerical Simulation
             </p>
@@ -223,9 +346,7 @@ title: Home
             </h3>
 
             <p>
-                Embedded Systems<br>
-                ESP32<br>
-                Sensors<br>
+                Embedded Systems<br>                                
                 PCB Development<br>
                 Live Telemetry & Communications
             </p>
@@ -239,6 +360,7 @@ title: Home
 
             <p>
                 GMAT<br>
+                Capella / Arcadia<br>
                 MATLAB<br>
                 QT<br>                
                 CAD
@@ -261,7 +383,7 @@ title: Home
     </h2>
 
     <p>
-        For research, engineering projects, or collaboration.
+        For research, engineering projects, collaboration or simply to share good music.
     </p>
 
     <div class="contact-links">

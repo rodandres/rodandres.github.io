@@ -17,4 +17,12 @@ technologies:
 github: "https://github.com/rodandres"
 
 available: false
+
+collections:
+  - featured
+  - technical
+
+carousel:
+  featured: 3 
+  technical: 3
 ---

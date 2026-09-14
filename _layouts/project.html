@@ -2,15 +2,27 @@
 layout: default
 ---
 
-<article class="project-page">
+<div class="project-page">
+
+    <!-- =====================================================
+         PROJECT HEADER
+         ===================================================== -->
 
     <header class="project-header">
 
-        <p class="section-label">
-            {{ page.category }}
-        </p>
+        <a
+            href="{{ '/projects/' | relative_url }}"
+            class="project-back-link"
+        >
+            ← ALL PROJECTS
+        </a>
 
-        <h1>
+
+        <div class="project-category">
+            {{ page.category }}
+        </div>
+
+        <h1 class="project-title">
             {{ page.title }}
         </h1>
 
@@ -20,84 +32,380 @@ layout: default
         </p>
         {% endif %}
 
-        <div class="project-meta">
-
-            {% if page.year %}
-            <span>{{ page.year }}</span>
-            {% endif %}
-
-            {% if page.status %}
-            <span>{{ page.status }}</span>
-            {% endif %}
-
-        </div>
-
     </header>
 
 
+    <!-- =====================================================
+         PROJECT INFORMATION
+         ===================================================== -->
+
+    <section class="project-info-bar">
+
+        <!-- ROLE -->
+
+        {% if page.role %}
+        <div class="project-info-block">
+
+            <span class="project-info-label">
+                ROLE
+            </span>
+
+            <div class="project-info-primary">
+                {{ page.role }}
+            </div>
+
+        </div>
+        {% endif %}
+
+
+        <!-- TEAM -->
+
+        {% if page.team %}
+        <div class="project-info-block">
+
+            <span class="project-info-label">
+                TEAM
+            </span>
+
+            <div class="project-info-primary">
+                {{ page.team }}
+            </div>
+
+        </div>
+        {% endif %}
+
+
+        <!-- YEAR -->
+
+        {% if page.year %}
+        <div class="project-info-block">
+
+            <span class="project-info-label">
+                YEAR
+            </span>
+
+            <div class="project-info-primary">
+                {{ page.year }}
+            </div>
+
+        </div>
+        {% endif %}
+
+
+        <!-- STATUS -->
+
+        {% if page.status %}
+        <div class="project-info-block">
+
+            <span class="project-info-label">
+                STATUS
+            </span>
+
+            <div class="project-info-primary">
+                {{ page.status }}
+            </div>
+
+        </div>
+        {% endif %}
+
+
+        <!-- TECHNOLOGIES -->
+
+        {% if page.technologies %}
+        <div class="project-info-block project-info-technologies">
+
+            <span class="project-info-label">
+                TECHNOLOGIES
+            </span>
+
+            <div class="project-technologies">
+
+                {% for technology in page.technologies %}
+
+                <span class="technology-tag">
+                    {{ technology }}
+                </span>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+        {% endif %}
+
+
+        <!-- LINKS -->
+
+        {% if page.github or page.demo or page.paper %}
+        <div class="project-info-block project-info-links">
+
+            <span class="project-info-label">
+                LINKS
+            </span>
+
+            <div class="project-links">
+
+                {% if page.github %}
+                <a
+                    href="{{ page.github }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub ↗
+                </a>
+                {% endif %}
+
+                {% if page.demo %}
+                <a
+                    href="{{ page.demo }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo ↗
+                </a>
+                {% endif %}
+
+                {% if page.paper %}
+                <a
+                    href="{{ page.paper }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Paper ↗
+                </a>
+                {% endif %}
+
+                {% if page.documentation %}
+                <a href="{{ page.documentation }}" target="_blank" rel="noopener noreferrer">
+                    Documentation ↗
+                </a>
+                {% endif %}
+
+                {% if page.report %}
+                <a href="{{ page.report }}" target="_blank" rel="noopener noreferrer">
+                    Report ↗
+                </a>
+                {% endif %}
+
+                {% if page.video %}
+                <a href="{{ page.video }}" target="_blank" rel="noopener noreferrer">
+                    Video ↗
+                </a>
+                {% endif %}
+
+            </div>
+
+        </div>
+        {% endif %}
+
+    </section>
+
+
+    <!-- =====================================================
+         HERO IMAGE
+         ===================================================== -->
+
     {% if page.image %}
-    <img
-        class="project-hero-image"
-        src="{{ page.image | relative_url }}"
-        alt="{{ page.title }}"
-    >
+
+    <figure class="project-hero">
+
+        {% if page.image contains '://' %}
+
+        <img
+            src="{{ page.image }}"
+            alt="{{ page.image_alt | default: page.title }}"
+        >
+
+        {% else %}
+
+        <img
+            src="{{ page.image | relative_url }}"
+            alt="{{ page.image_alt | default: page.title }}"
+        >
+
+        {% endif %}
+
+        {% if page.image_caption %}
+        <figcaption>
+            {{ page.image_caption }}
+        </figcaption>
+        {% endif %}
+
+    </figure>
+
     {% endif %}
 
 
-    <div class="project-layout">
+    <!-- =====================================================
+         PROJECT CONTENT
+         ===================================================== -->
 
-        <div class="project-content">
+    <article class="project-content">
 
-            {{ content }}
+        {{ content }}
 
-        </div>
+    </article>
 
-
-        <aside class="project-sidebar">
-
-            {% if page.technologies %}
-
-            <div class="sidebar-section">
-
-                <h3>
-                    Technologies
-                </h3>
-
-                <ul>
-
-                    {% for technology in page.technologies %}
-
-                    <li>
-                        {{ technology }}
-                    </li>
-
-                    {% endfor %}
-
-                </ul>
-
-            </div>
-
-            {% endif %}
+</div>
 
 
-            {% if page.github %}
+<!-- =========================================================
+     PROJECT SECTION NAVIGATION
+     ========================================================= -->
 
-            <div class="sidebar-section">
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-                <h3>
-                    Repository
-                </h3>
+    const content =
+        document.querySelector(".project-content");
 
-                <a href="{{ page.github }}">
-                    GitHub →
-                </a>
+    const navigation =
+        document.getElementById("project-navigation-links");
 
-            </div>
+    const toggle =
+        document.querySelector(".project-header-navigation");
 
-            {% endif %}
+    const projectHeader =
+        document.querySelector(".project-header");
 
-        </aside>
 
-    </div>
+    if (
+        !content ||
+        !navigation ||
+        !toggle ||
+        !projectHeader
+    ) {
+        return;
+    }
 
-</article>
+
+    /* =====================================================
+       GENERATE SECTION LINKS
+       ===================================================== */
+
+    const headings =
+        content.querySelectorAll("h2");
+
+    headings.forEach(function (heading, index) {
+
+        if (!heading.id) {
+            heading.id = "section-" + (index + 1);
+        }
+
+        const link =
+            document.createElement("a");
+
+        link.href =
+            "#" + heading.id;
+
+        link.textContent =
+            heading.textContent;
+
+        navigation.appendChild(link);
+    });
+
+
+    /* =====================================================
+       TOGGLE NAVIGATION
+       ===================================================== */
+
+    toggle.addEventListener("click", function () {
+
+        const isOpen =
+            toggle.getAttribute("aria-expanded") === "true";
+
+        toggle.setAttribute(
+            "aria-expanded",
+            String(!isOpen)
+        );
+
+        navigation.classList.toggle(
+            "is-open",
+            !isOpen
+        );
+
+        toggle.querySelector(
+            ".project-navigation-icon"
+        ).textContent =
+            isOpen ? "+" : "−";
+    });
+
+
+    /* =====================================================
+       CLOSE AFTER CLICKING SECTION
+       ===================================================== */
+
+    navigation.addEventListener(
+        "click",
+        function (event) {
+
+            if (event.target.tagName === "A") {
+
+                toggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                navigation.classList.remove(
+                    "is-open"
+                );
+
+                toggle.querySelector(
+                    ".project-navigation-icon"
+                ).textContent = "+";
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       SHOW NAVIGATION AFTER HEADER LEAVES VIEW
+       ===================================================== */
+
+    const observer =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        toggle.classList.remove(
+                            "is-visible"
+                        );
+
+                        navigation.classList.remove(
+                            "is-open"
+                        );
+
+                        toggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        toggle.querySelector(
+                            ".project-navigation-icon"
+                        ).textContent = "+";
+
+                    } else {
+
+                        toggle.classList.add(
+                            "is-visible"
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0
+            }
+        );
+
+
+    observer.observe(projectHeader);
+
+});
+</script>
